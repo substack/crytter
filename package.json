@@ -1,0 +1,39 @@
+{
+    "name" : "crytter",
+    "version" : "0.0.0",
+    "description" : "distributed peer to peer social networking feeds",
+    "main" : "index.js",
+    "bin" : {
+        "crytter" : "node server.js"
+    },
+    "directories" : {
+        "example" : "example",
+        "test" : "test"
+    },
+    "dependencies" : {
+        "append-only" : "~0.0.0",
+        "optimist" : "~0.3.5",
+        "ecstatic" : "~0.3.0",
+        "request" : "~2.12.0"
+    },
+    "scripts" : {
+        "start" : "node server.js"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/substack/crytter.git"
+    },
+    "homepage" : "https://github.com/substack/crytter",
+    "keywords" : [
+        "p2p",
+        "social",
+        "network",
+        "feed"
+    ],
+    "author" : {
+        "name" : "James Halliday",
+        "email" : "mail@substack.net",
+        "url" : "http://substack.net"
+    },
+    "license" : "MIT"
+}
