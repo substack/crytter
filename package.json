@@ -1,10 +1,10 @@
 {
     "name" : "crytter",
-    "version" : "0.0.0",
+    "version" : "0.0.1",
     "description" : "distributed peer to peer social networking feeds",
     "main" : "index.js",
     "bin" : {
-        "crytter" : "node server.js"
+        "crytter" : "server.js"
     },
     "directories" : {
         "example" : "example",
