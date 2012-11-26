@@ -1,5 +1,6 @@
 var appender = require('append-only');
 var peeps = appender();
+var argv = require('optimist').argv;
 
 peeps.on('item', function (peep) {
     var s = peep.__id.split(':');
@@ -19,7 +20,7 @@ var ecstatic = require('ecstatic')(__dirname + '/static');
 var server = http.createServer(function (req, res) {
     if (req.url === '/replicate') {
         res.setHeader('content-type', 'application/json-lines');
-        req.pipe(emitter.createStream()).pipe(res);
+        req.pipe(peeps.createStream()).pipe(res);
     }
     else if (req.method === 'POST') {
         var name = req.url.replace(/^\//, '');
@@ -36,7 +37,7 @@ var server = http.createServer(function (req, res) {
     }
     else res.end('...\n');
 });
-server.listen(5000);
+server.listen(argv._[0]);
 
 function slashify (s) {
     return s.replace(/[\r\n\t\f]/g, function (x) {
@@ -48,3 +49,9 @@ function slashify (s) {
         }[x];
     });
 }
+
+var request = require('request');
+argv._.slice(1).forEach(function (u) {
+    var r = request.post(u);
+    r.pipe(peeps.createStream()).pipe(r);
+});
