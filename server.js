@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var appender = require('append-only');
 var peeps = appender();
 var argv = require('optimist').argv;
