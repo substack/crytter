@@ -59,7 +59,8 @@ crytter user list
 crytter ring add RINGNAME
 crytter ring rm RINGNAME
 crytter ring list
-crytter ring useradd NAME RINGNAME
+crytter ring useradd NAME RINGNAME {-r|-w}
+crytter ring usermod NAME RINGNAME {-r|-w}
 crytter ring userdel NAME RINGNAME
 crytter ring userlist RINGNAME
 
