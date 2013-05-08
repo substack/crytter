@@ -42,6 +42,42 @@ and watch the feeds replicate in realtime:
   oh hello.
 ```
 
+# todo
+
+These commands should eventually be implemented, along with public key
+encryption and signing:
+
+```
+crytter relay MESSAGE {--ring RINGNAME | --name NAME}
+crytter upload FILENAME {--ring RINGNAME | --name NAME}
+crytter search  QUERY {--ring RINGNAME | --name NAME}
+
+crytter user add NAME PUBKEY
+crytter user search NAME
+crytter user list
+
+crytter ring add RINGNAME
+crytter ring rm RINGNAME
+crytter ring list
+crytter ring useradd NAME RINGNAME
+crytter ring userdel NAME RINGNAME
+crytter ring userlist RINGNAME
+
+crytter profile generate NAME
+crytter profile add NAME PUBKEY PRIVKEY
+crytter profile rm NAME
+crytter profile list
+
+crytter config set network-quota VALUE {--ring RINGNAME | --name NAME}
+crytter config set storage-quota VALUE {--ring RINGNAME | --name NAME}
+crytter config get KEY VALUE {--ring RINGNAME | --name NAME}
+crytter config list {--ring RINGNAME | --name NAME}
+
+crytter peer add HOSTNAME
+crytter peer rm HOSTNAME
+crytter peer list
+```
+
 # install
 
 To get the `crytter` command, with [npm](https://npmjs.org) do:
