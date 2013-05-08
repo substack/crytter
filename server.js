@@ -22,6 +22,7 @@ var ecstatic = require('ecstatic')(__dirname + '/static');
 var server = http.createServer(function (req, res) {
     if (req.url === '/replicate') {
         res.setHeader('content-type', 'application/json-lines');
+        res.connection.setTimeout(0);
         req.pipe(peeps.createStream()).pipe(res);
     }
     else if (req.method === 'POST') {
@@ -52,8 +53,8 @@ function slashify (s) {
     });
 }
 
-var request = require('request');
+var hyperquest = require('hyperquest');
 argv._.slice(1).forEach(function (u) {
-    var r = request.post(u);
+    var r = hyperquest.post(u);
     r.pipe(peeps.createStream()).pipe(r);
 });

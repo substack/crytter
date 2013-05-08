@@ -1,6 +1,6 @@
 {
     "name" : "crytter",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "description" : "distributed peer to peer social networking feeds",
     "main" : "index.js",
     "bin" : {
@@ -14,7 +14,7 @@
         "append-only" : "~0.1.0",
         "optimist" : "~0.3.5",
         "ecstatic" : "~0.3.0",
-        "request" : "~2.12.0"
+        "hyperquest" : "~0.1.5"
     },
     "scripts" : {
         "start" : "node server.js"
